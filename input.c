@@ -22,7 +22,8 @@ void read_command(char *prompt, size_t size)
 		}
 
 /**
- * Remove new line character */
+ * Remove new line character
+ */
 		prompt[strcspn(prompt, "\n")] = '\0';
 	}
 }
