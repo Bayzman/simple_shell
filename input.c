@@ -21,9 +21,6 @@ void read_command(char *prompt, size_t size)
 			show("Error while reading input \n");
 		}
 
-/**
- * Remove new line character
- */
 		prompt[strcspn(prompt, "\n")] = '\0';
 	}
 }
