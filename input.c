@@ -1,12 +1,28 @@
 #include "shell.h"
 
 /**
- * show - print to the standard output
- * @text: pointer to a char array / string
+ * read_command - takes input from user
+ * @prompt: string input from user
+ * @size: size of string
  * Return: void
  */
 
-void show(const char *text)
+void read_command(char *prompt, size_t size)
 {
-	write(STDOUT_FILENO, text, strlen(text));
+	if (fgets(prompt, size, stdin) == NULL)
+	{
+		if (feof(stdin))
+		{
+			show("\n");
+			exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			show("Error while reading input \n");
+		}
+
+/**
+ * Remove new line character */
+		prompt[strcspn(prompt, "\n")] = '\0';
+	}
 }

@@ -8,9 +8,11 @@
 
 void exec_prompt(const char *prompt)
 {
+	pid_t child_process;
 	char *argv[] = {"bin/ls", "-l", NULL};
+	(void) prompt;
 
-	pid_t child_process = fork();
+	child_process = fork();
 
 	if (child_process == -1)
 	{
