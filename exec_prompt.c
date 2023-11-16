@@ -6,25 +6,24 @@
  * Return: void
  */
 
-void exec_prompt(const char *prompt)
+void exec_prompt(char *prompt, char *argv[])
 {
 	pid_t child_process;
-	char *argv[] = {"bin/ls", "-l", NULL};
-	(void) prompt;
 
 	child_process = fork();
 
 	if (child_process == -1)
 	{
 		perror("fork");
-		exit(EXIT_FAILURE);
 	}
 
 	else if (child_process == 0)
 	{
-		execve(argv[0], argv, NULL);
-		perror("execve");
-		exit(EXIT_FAILURE);
+		if (execve(prompt, argv, NULL) == -1)
+		{
+			perror("execve");
+			exit(EXIT_FAILURE);
+		}
 	}
 
 	else

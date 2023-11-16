@@ -8,9 +8,12 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+#define MAX_INPUT 1024
+#define MAX_ARG 100
+
 void show(const char *text);
 void show_prompt(void);
-void exec_prompt(const char *prompt);
+void exec_prompt(char *prompt, char *argv[]);
 void read_command(char *prompt, size_t size);
 
 #endif

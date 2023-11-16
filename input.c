@@ -23,4 +23,14 @@ void read_command(char *prompt, size_t size)
 
 		prompt[strcspn(prompt, "\n")] = '\0';
 	}
+
+	if (strlen(prompt) == 0)
+	{
+		;
+	}
+
+	if (strcmp(prompt, "exit") == 0)
+	{
+		exit(EXIT_SUCCESS);
+	}
 }

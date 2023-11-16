@@ -8,13 +8,14 @@
 
 int main(void)
 {
-	char prompt[1024];
+	char prompt[MAX_INPUT];
+	char *argv[MAX_ARG];
 
 	while (1)
 	{
 		show_prompt();
 		read_command(prompt, sizeof(prompt));
-		exec_prompt(prompt);
+		exec_prompt(prompt, argv);
 	}
 
 	return (0);
