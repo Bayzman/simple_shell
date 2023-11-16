@@ -21,7 +21,7 @@ void exec_prompt(char *prompt, char *argv[])
 	{
 		if (execve(prompt, argv, NULL) == -1)
 		{
-			perror("execve");
+			perror("./shell");
 			exit(EXIT_FAILURE);
 		}
 	}
