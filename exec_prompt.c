@@ -3,6 +3,7 @@
 /**
  * exec_prompt - executes a prompt
  * @prompt - pointer to the string
+ * @argv - array of arguments
  * Return: void
  */
 
