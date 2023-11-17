@@ -11,18 +11,10 @@ void read_command(char *prompt, size_t size)
 {
 	if (fgets(prompt, size, stdin) == NULL)
 	{
-		if (feof(stdin))
-		{
-			show("\n");
-			exit(EXIT_SUCCESS);
-		}
-		else
-		{
-			show("Error while reading input \n");
-		}
-
-		prompt[strcspn(prompt, "\n")] = '\0';
+		show("\n");
 	}
+
+	prompt[strcspn(prompt, "\n")] = '\0';
 
 	if (strlen(prompt) == 0)
 	{

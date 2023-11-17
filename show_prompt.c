@@ -7,5 +7,5 @@
 
 void show_prompt(void)
 {
-	show("#cisfun$ ");
+	show("$ ");
 }

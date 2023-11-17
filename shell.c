@@ -20,11 +20,11 @@ int main(void)
 		n_args = cmd_args(prompt, command, argv);
 		if (n_args > 0)
 		{
-			if (access(command, X_OK) == -1)
+			if (access(prompt, X_OK) == -1)
 			{
-				handle_path(command);
+				handle_path(prompt);
 			}
-			if (access(command, X_OK) == 0)
+			if (access(prompt, X_OK) == 0)
 			{
 				exec_prompt(prompt, argv);
 			}

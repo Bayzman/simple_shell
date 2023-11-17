@@ -10,27 +10,20 @@
 
 int cmd_args(char *prompt, char *command, char *argv[])
 {
-	int i;
+	int argc;
 	char *token;
+	(void) command;
 
-	i = 0;
+	argc = 0;
 	token = strtok(prompt, " ");
 	while (token != NULL)
 	{
-		if (i == 0)
-		{
-			strcpy(command, token);
-		}
-		else
-		{
-			argv[i - 1] = token;
-		}
-
+		argv[argc] = token;
 		token = strtok(NULL, " ");
-		i++;
+		argc++;
 	}
 
-	argv[i - 1] = NULL;
+	argv[argc] = NULL;
 
-	return (i - 1);
+	return (argc);
 }

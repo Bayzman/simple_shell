@@ -16,13 +16,14 @@ void exec_prompt(char *prompt, char *argv[])
 	if (child_process == -1)
 	{
 		perror("fork");
+		exit(EXIT_FAILURE);
 	}
 
 	else if (child_process == 0)
 	{
 		if (execve(prompt, argv, NULL) == -1)
 		{
-			perror("./shell");
+			perror("execve failed");
 			exit(EXIT_FAILURE);
 		}
 	}
